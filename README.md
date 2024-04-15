@@ -2,7 +2,9 @@
 
 A simple web-based tax calculator that calculates income tax based on the user's gross annual income, extra income, age group, and applicable deductions.
 
-#### I assumed that if the user doesn't enter anything in the input fields before submitting the form, then the empty input would be considered invalid (NaN), and as a result, a warning will be displayed.
+#### - I assumed that if the user doesn't enter anything in the input fields before submitting the form, then the empty input would be considered invalid (NaN), and as a result, a warning will be displayed.
+
+#### - Another assumption was every input and output should be in rupees not in lakhs
 
 ![alt text](</images/1.png>) ![alt text](</images/2.png>) ![alt text](</images/3.png>) ![alt text](</images/4.png>) ![alt text](</images/5.png>) ![alt text](</images/6.png>)
 
