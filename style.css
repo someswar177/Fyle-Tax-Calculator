@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    margin-top: 3%;
+    width: 50%;
+    min-width: 360px;
+  }
+
+  h1,
+  h4 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  h6 {
+    font-size: large;
+  }
+
+  #taxForm,
+  h6,
+  .close-button {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  .tooltip-custom {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+
+  @media (max-width: 800px) {
+    .container {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 370px) {
+    .container {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
