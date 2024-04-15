@@ -7,27 +7,44 @@
   <title>Tax Calculator</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    h1,h4{
+    .container {
+      width: 50%;
+    }
+
+    h1,
+    h4 {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-    h6{
+
+    h6 {
       font-size: large;
     }
-    #taxForm,h6,.close-button{
+
+    #taxForm,
+    h6,
+    .close-button {
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .tooltip-custom {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container mt-5 w-50 border rounded-2 px-5 pt-4 pb-3">
+  <div class="container mt-5 border border-2 rounded-2 px-5 pt-4 pb-3">
     <h1 class="mb-4">Tax Calculator</h1>
     <form id="taxForm">
       <div class="mb-3">
         <label for="grossIncome" class="form-label">
-          Enter gross annual income
-          <span data-bs-toggle="tooltip" data-bs-placement="top" title="Your total annual income before any deductions">
+          Gross annual income
+          <span data-bs-toggle="tooltip" data-bs-placement="top"
+            title="Gross annual income is your total salary in a year before any deductions">
             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor"
               class="bi bi-question-circle" viewBox="0 0 16 16">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
@@ -38,18 +55,18 @@
         </label>
         <div class="position-relative">
           <input placeholder="Enter gross annual income" class="form-control" id="grossIncome" required>
-          <span data-bs-toggle="tooltip" data-bs-placement="right" title="Please enter numbers only">
+          <span class="tooltip-custom" data-bs-toggle="tooltip" title="Please enter numbers only">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" id="error-grossIncome"
-              class="bi bi-exclamation-lg text-danger border border-danger rounded-circle position-absolute end-0 top-0 mx-2 mt-2 d-none"
-              viewBox="0 0 16 16">
+              class="bi bi-exclamation-lg text-danger border border-danger rounded-circle d-none" viewBox="0 0 16 16">
               <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0zM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0" />
             </svg>
           </span>
         </div>
       </div>
       <div class="mb-3">
-        <label for="extraIncome" class="form-label">Enter extra income
-          <span data-bs-toggle="tooltip" data-bs-placement="top" class="question-mark" title="Any additional income you receive apart from your gross annual income">
+        <label for="extraIncome" class="form-label">Extra income
+          <span data-bs-toggle="tooltip" data-bs-placement="top"
+            title="Extra income is any additional income you receive apart from your gross annual income">
             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor"
               class="bi bi-question-circle" viewBox="0 0 16 16">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
@@ -60,17 +77,16 @@
         </label>
         <div class="position-relative">
           <input placeholder="Enter extra income" class="form-control" id="extraIncome" required>
-          <span data-bs-toggle="tooltip" data-bs-placement="right" title="Please enter numbers only">
+          <span class="tooltip-custom" data-bs-toggle="tooltip" title="Please enter numbers only">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" id="error-extraIncome"
-              class="bi bi-exclamation-lg text-danger border border-danger rounded-circle position-absolute end-0 top-0 mx-2 mt-2 d-none"
-              viewBox="0 0 16 16">
+              class="bi bi-exclamation-lg text-danger border border-danger rounded-circle d-none" viewBox="0 0 16 16">
               <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0zM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0" />
             </svg>
           </span>
         </div>
       </div>
       <div class="mb-3">
-        <label for="ageGroup" class="form-label">Enter age group
+        <label for="ageGroup" class="form-label">Age group
           <span data-bs-toggle="tooltip" data-bs-placement="top" title="Your age group for tax calculation">
             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor"
               class="bi bi-question-circle" viewBox="0 0 16 16">
@@ -87,7 +103,7 @@
         </select>
       </div>
       <div class="mb-3">
-        <label for="deductions" class="form-label">Enter total applicable deductions
+        <label for="deductions" class="form-label">Total applicable deductions
           <span data-bs-toggle="tooltip" data-bs-placement="top" title="Any deductions applicable to your income">
             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor"
               class="bi bi-question-circle" viewBox="0 0 16 16">
@@ -99,15 +115,15 @@
         </label>
         <div class="position-relative">
           <input placeholder="Enter total applicable deductions" class="form-control" id="deductions" required>
-          <span data-bs-toggle="tooltip" data-bs-placement="right" title="Please enter numbers only">
+          <span class="tooltip-custom" data-bs-toggle="tooltip" title="Please enter numbers only">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" id="error-deductions"
-              class="bi bi-exclamation-lg text-danger border border-danger rounded-circle position-absolute end-0 top-0 mx-2 mt-2 d-none"
-              viewBox="0 0 16 16">
+              class="bi bi-exclamation-lg text-danger border border-danger rounded-circle d-none" viewBox="0 0 16 16">
               <path d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0zM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0" />
             </svg>
           </span>
         </div>
-        <button type="button" onclick="validateForm()" class="btn btn-primary form-control mt-3 fs-5">Submit</button>
+      </div>
+      <button type="button" onclick="validateForm()" class="btn btn-primary form-control mt-3 fs-5">Submit</button>
     </form>
   </div>
 
@@ -122,7 +138,8 @@
           <h4 class="modal-title my-2" id="resultModalLabel">Your overall income will be</h4>
           <h6 class="" id="resultText"></h6>
           <div class="my-2">after tax deductions</div>
-          <button type="button" class="btn btn-primary mt-4 px-5 close-button" data-bs-dismiss="modal" aria-label="Close">Close</button>
+          <button type="button" class="btn btn-primary mt-4 px-5 close-button" data-bs-dismiss="modal"
+            aria-label="Close">Close</button>
         </div>
       </div>
     </div>
